@@ -13,7 +13,7 @@ namespace PatientRecordSystem.Domain.Repositories
     {
         Task<PatientReportResource> GetPatientReport(int id);
 
-        Task<IEnumerable<Patient>> Search(string prfix, int size);
+        Task<IEnumerable<Patient>> Search(string prefix, int size);
 
         Task<PagedList<PatientResource>> ListAsync(QueryStringParameters queryString, Dictionary<string, Expression<Func<PatientResource, object>>> columnsMap);
 

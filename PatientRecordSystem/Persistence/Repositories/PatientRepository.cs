@@ -24,9 +24,9 @@ namespace PatientRecordSystem.Persistence.Repositories
             return await _context.Patients.Include(x => x.MetaData).SingleOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<IEnumerable<Patient>> Search(string prfix, int size)
+        public async Task<IEnumerable<Patient>> Search(string prefix, int size)
         {
-            return await _context.Patients.Where(x => x.PatientName.StartsWith(prfix)).OrderBy(x => x.PatientName).Take(size).ToListAsync();
+            return await _context.Patients.Where(x => x.PatientName.StartsWith(prefix)).OrderBy(x => x.PatientName).Take(size).ToListAsync();
         }
 
         public async Task<PatientReportResource> GetPatientReport(int id)

@@ -36,9 +36,9 @@ namespace PatientRecordSystem.Services
             return new PatientResponse(patient);
         }
 
-        public async Task<IEnumerable<Patient>> Search(string prfix, int size)
+        public async Task<IEnumerable<Patient>> Search(string prefix, int size)
         {
-            return await _patientRepository.Search(prfix, size);
+            return await _patientRepository.Search(prefix, size);
         }
 
         public async Task<PagedList<PatientResource>> ListAsync(QueryStringParameters queryString, Dictionary<string, Expression<Func<PatientResource, object>>> columnsMap)

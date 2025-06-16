@@ -14,7 +14,7 @@ namespace PatientRecordSystem.Domain.Services
     {
         Task<PatientResponse> GetById(int id);
 
-        Task<IEnumerable<Patient>> Search(string prfix, int size);
+        Task<IEnumerable<Patient>> Search(string prefix, int size);
 
         Task<PatientReportResource> GetPatientReport(int id);
 
